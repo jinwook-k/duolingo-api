@@ -1,7 +1,7 @@
 {
   "name": "duolingo-api",
   "version": "1.0.0",
-  "description": "No Auth (Unofficial) Duolingo API",
+  "description": "(Unofficial) Duolingo API - No Authentication",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test/**/*.js"

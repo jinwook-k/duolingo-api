@@ -9,6 +9,12 @@ class Duolingo {
         this.setRequestUrl(username, id);
     }
 
+    /**
+     * Sets up which request URL will be used based on the identifier (username | id)
+     * @private
+     * @param {string} username Duolingo username
+     * @param {string} id Duolingo user ID
+     */
     setRequestUrl = (username, id) => {
         if (username.length > 0) {
             this.requestUrl = `${this.baseUrl}?username=${username}`;
@@ -21,15 +27,32 @@ class Duolingo {
         }
     };
 
+    /**
+     * Gets selected fields metadata
+     * @public
+     * @param {Array} fields List of selected fields being requested to retrieve
+     * @return {JSON} data Metadata with only selected fields
+     */
     getDataByFields = async (fields = []) => {
         let requestUrlWithFields = `${this.requestUrl}?fields=${fields.toString()}`;
         return (await axios.get(requestUrlWithFields)).data;
     }
 
+    /**
+     * Gets raw metadata from duolingo. No pre/post-processing
+     * @public
+     * @return {JSON} data Raw metadata
+     */
      getRawData = async () => {
         return (await axios.get(this.requestUrl)).data;
     }
 
+    /**
+     * Gets processed metadata from duolingo. Post-processing of adding display name for achievements,
+     * Adding level for each course and adding total level based on XP.
+     * @public
+     * @return {JSON} data Processed metadata
+     */
     getProcessedData = async () => {
         let metadata = await this.getRawData();
         metadata["_achievements"] = this.translateAchievements(metadata["_achievements"]);
@@ -38,6 +61,12 @@ class Duolingo {
         return metadata;
     }
 
+    /**
+     * Adds a "level" property to a list of objects, as long as "xp" field is present.
+     * @public
+     * @param {Array} courses List of course objects with "xp" field
+     * @return {Array} courseWithLevel List of courses that include "level" based on "xp"
+     */
     addLevelToCourses = (courses) => {
         let courseWithLevel = [];
         for (let course of courses) {
@@ -49,7 +78,12 @@ class Duolingo {
         return courseWithLevel;
     }
 
-
+    /**
+     * Identifies which level based on xp.
+     * @public
+     * @param {number|string} xp Amount of experience points
+     * @return {number} level Level based on amount of xp
+     */
     translateXpToLevels = (xp) => {
         let xpInt = typeof xp === "string" ? parseInt(xp) : xp;
 
@@ -76,6 +110,12 @@ class Duolingo {
         return right < left ? right + 1 : left + 1;
     }
 
+    /**
+     * Adds a "displayName" property to a list of objects, as long as "name" field is present.
+     * @public
+     * @param {Array} achievements List of achievements objects with "name" field
+     * @return {Array} translatedAchievements List of achievements that include "displayName" based on "name"
+     */
     translateAchievements = (achievements) => {
         let translatedAchievements = [];
         for (let achievement of achievements) {

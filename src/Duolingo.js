@@ -27,6 +27,22 @@ class Duolingo {
      getRawData = async () => {
         return (await axios.get(this.requestUrl)).data;
     }
+
+    getProcessedData = async () => {
+        let metadata = await this.getRawData();
+        metadata["_achievements"] = this.translateAchievements(metadata["_achievements"]);
+    }
+
+    translateAchievements = (achievements) => {
+        let translatedAchievements = [];
+        for (let achievement of achievements) {
+            translatedAchievements.push({
+                ...achievement,
+                displayName: legacyAchievementDisplayNames[achievement.name]
+            });
+        }
+        return translatedAchievements;
+    }
 }
 
 module.exports = Duolingo;

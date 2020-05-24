@@ -73,7 +73,7 @@ getMyFields.then(data => {
 });
 ```
 
-### Get All (raw) Metadata
+## Get All (raw) Metadata
 If you just want all the metadata (as-is) available to you, then use the `getMetadata()` method.
 ```javascript
 async function getMetadata() {

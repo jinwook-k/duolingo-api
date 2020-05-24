@@ -102,6 +102,35 @@ getMetadata.then(data => {
 ```
 `data` will give a result similar to [UnauthenticatedProcessedResponse.json](./test/mock/UnauthenticatedProcessedResponse.json).
 
+## Endpoints
+```javascript
+// Gets raw metadata from duolingo. No pre/post-processing
+duolingo.getRawData();
+
+// Gets processed metadata from duolingo. Post-processing of adding display name for achievements,
+// Adding level for each course and adding total level based on XP.
+duolingo.getProcessedData();
+
+// Gets selected fields metadata
+let fields = [];
+duolingo.getDataByFields();
+
+// Identifies which level based on xp.
+let xp = 1650; // or "1650"
+duolingo.translateXpToLevels(xp);
+
+// Adds a "level" property to a list of objects, as long as "xp" field is present.
+let courses = [];
+duolingo.addLevelToCourses(courses);
+
+// Adds a "displayName" property to a list of objects, as long as "name" field is present.
+let achievements = [];
+duolingo.translateAchievements(achievements);
+```
+
 ### Extra Info
 - [legacy/modern achievements](https://duolingo.fandom.com/wiki/Achievements)
+  - based on my observation, most of the achievements being passed back by noauth/auth responses;
+  it is still using legacy and doesn't include the current implementation of achievements.
 - [experience to level table](https://forum.duolingo.com/comment/33002358)
+  - this table was used on how I converted XP to Levels when calling `getProcessedMetadata()`

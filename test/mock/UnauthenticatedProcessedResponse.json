@@ -1,0 +1,165 @@
+{
+  "name": "John Doe",
+  "emailVerified": true,
+  "learningLanguage": "ja",
+  "globalAmbassadorStatus": {},
+  "username": "JohnDoe1",
+  "streak": 58,
+  "canUseModerationTools": false,
+  "hasPhoneNumber": false,
+  "observedClassroomIds": [],
+  "joinedClassroomIds": [],
+  "courses": [
+    {
+      "placementTestAvailable": false,
+      "healthEnabled": false,
+      "learningLanguage": "ja",
+      "crowns": 102,
+      "xp": 6751,
+      "id": "DUOLINGO_JA_EN",
+      "authorId": "duolingo",
+      "fromLanguage": "en",
+      "title": "Japanese",
+      "preload": false,
+      "level": 11
+    }
+  ],
+  "privacySettings": [],
+  "bio": "",
+  "inviteURL": "https://invite.duolingo.com/ABCDEFG1234567",
+  "id": 123456789,
+  "hasPlus": false,
+  "roles": [
+    "users"
+  ],
+  "_achievements": [
+    {
+      "name": "streak",
+      "count": 58,
+      "tier": 3,
+      "shouldShowUnlock": false,
+      "tierCounts": [
+        2,
+        7,
+        30
+      ],
+      "displayName": 'Wildfire'
+    },
+    {
+      "name": "completion",
+      "count": 0,
+      "tier": 3,
+      "shouldShowUnlock": false,
+      "tierCounts": [
+        10,
+        20,
+        131
+      ],
+      "displayName": 'Champion'
+    },
+    {
+      "name": "spending",
+      "count": 900,
+      "tier": 3,
+      "shouldShowUnlock": false,
+      "tierCounts": [
+        20,
+        50,
+        200
+      ],
+      "displayName": 'Big Spender'
+    },
+    {
+      "name": "items",
+      "count": 22,
+      "tier": 3,
+      "shouldShowUnlock": false,
+      "tierCounts": [
+        1,
+        1,
+        1
+      ],
+      "displayName": 'Outfits'
+    },
+    {
+      "name": "time",
+      "count": 18,
+      "tier": 3,
+      "shouldShowUnlock": false,
+      "tierCounts": [
+        1,
+        1,
+        1
+      ],
+      "displayName": 'Overtime'
+    },
+    {
+      "name": "social",
+      "count": 0,
+      "tier": 3,
+      "shouldShowUnlock": true,
+      "tierCounts": [
+        3,
+        3,
+        1
+      ],
+      "displayName": 'Friendly'
+    },
+    {
+      "name": "xp",
+      "count": 15,
+      "tier": 3,
+      "shouldShowUnlock": false,
+      "tierCounts": [
+        50,
+        100,
+        200
+      ],
+      "displayName": 'Overachiever'
+    },
+    {
+      "name": "perfect",
+      "count": 406,
+      "tier": 3,
+      "shouldShowUnlock": false,
+      "tierCounts": [
+        1,
+        5,
+        20
+      ],
+      "displayName": 'Sharpshooter'
+    }
+  ],
+  "currentCourseId": "DUOLINGO_JA_EN",
+  "creationDate": 1504819526,
+  "picture": "//duolingo-images.s3.amazonaws.com/avatars/123456789/ABC_123",
+  "fromLanguage": "en",
+  "hasFacebookId": true,
+  "optionalFeatures": [
+    {
+      "status": "ON",
+      "id": "convert_lingots_to_gems"
+    },
+    {
+      "status": "ON",
+      "id": "levels_opt_in_v1"
+    },
+    {
+      "status": "AVAILABLE",
+      "id": "stories_ios"
+    },
+    {
+      "status": "ON",
+      "id": "leaderboards_opt_in"
+    },
+    {
+      "status": "AVAILABLE",
+      "id": "stories_ios_waitlist"
+    }
+  ],
+  "hasRecentActivity15": false,
+  "hasGoogleId": true,
+  "totalXp": 15385,
+  "achievements": [],
+  "totalLevel": 20
+}

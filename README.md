@@ -9,6 +9,7 @@ browser.
 - and then it should be the string of numbers after the `/avatars/` path
   - e.g. _//duolingo-images.s3.amazonaws.com/avatars/**123456789**/Pn_6nmPqRS/medium_
   - **123456789** is the profile ID in this example
+  - ![Find Profile ID](./images/Find%20Profile%20ID.png)
 
 ## Usage
 ```javascript

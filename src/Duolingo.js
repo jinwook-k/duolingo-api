@@ -32,9 +32,22 @@ class Duolingo {
     getProcessedData = async () => {
         let metadata = await this.getRawData();
         metadata["_achievements"] = this.translateAchievements(metadata["_achievements"]);
-
+        metadata["courses"] = this.addLevelToCourses(metadata["courses"]);
+        metadata["totalLevel"] = this.translateXpToLevels(metadata["totalXp"]);
         return metadata;
     }
+
+    addLevelToCourses = (courses) => {
+        let courseWithLevel = [];
+        for (let course of courses) {
+            courseWithLevel.push({
+               ...course,
+               level: this.translateXpToLevels(course["xp"])
+            });
+        }
+        return courseWithLevel;
+    }
+
 
     translateXpToLevels = (xp) => {
         let xpInt = typeof xp === "string" ? parseInt(xp) : xp;

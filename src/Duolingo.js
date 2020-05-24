@@ -18,6 +18,15 @@ class Duolingo {
             throw new Error("Please provide a Username or an ID.");
         }
     };
+
+    getDataByFields = async (fields = []) => {
+        let requestUrlWithFields = `${this.requestUrl}?fields=${fields.toString()}`;
+        return (await axios.get(requestUrlWithFields)).data;
+    }
+
+     getRawData = async () => {
+        return (await axios.get(this.requestUrl)).data;
+    }
 }
 
 module.exports = Duolingo;

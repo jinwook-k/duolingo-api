@@ -15,9 +15,7 @@ describe('Duolingo Class',  () => {
         });
 
         it('should have each attribute be a string', async () => {
-            let metadata = await duolingo.getRawData();
-            console.log('metadata: ', metadata);
-
+            let metadata = await duolingo.getProcessedData();
         });
     });
 });

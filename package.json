@@ -23,5 +23,11 @@
     "chai": "^4.2.0",
     "dotenv": "^8.2.0",
     "mocha": "^7.1.2"
-  }
+  },
+  "keywords": [
+    "duolingo",
+    "duolingo api",
+    "duolingo js",
+    "duolingo metadata"
+  ]
 }

@@ -1,19 +1,20 @@
 const axios = require('axios');
-const baseUrl = "https://www.duolingo.com/2017-06-30/users";
 const {legacyAchievementDisplayNames, levels} = require("./Constants");
 
 
 class Duolingo {
+    baseUrl = "https://www.duolingo.com/2017-06-30/users";
+
     constructor({username = '', id = ''}) {
         this.setRequestUrl(username, id);
     }
 
     setRequestUrl = (username, id) => {
         if (username.length > 0) {
-            this.requestUrl = `${baseUrl}?username=${username}`;
+            this.requestUrl = `${this.baseUrl}?username=${username}`;
         }
         else if (id.length > 0) {
-            this.requestUrl = `${baseUrl}/${id}`;
+            this.requestUrl = `${this.baseUrl}/${id}`;
         }
         else {
             throw new Error("Please provide a Username or an ID.");
@@ -86,10 +87,6 @@ class Duolingo {
         return translatedAchievements;
     }
 }
-
-let duolingo = new Duolingo({username: "her"});
-let level = duolingo.translateXpToLevels(30000);
-console.log('level: ', level);
 
 
 module.exports = Duolingo;
